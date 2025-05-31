@@ -1,0 +1,21 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore files without any extension
+# Explanation:
+# - This pattern ignores files that do NOT have a dot in their name (thus no extension)
+# - It matches files at any directory level
+
+# Using a wildcard negation trick:
+# First ignore everything, then exclude files with extensions
+
+# Ignore all files
+*
+
+# But exclude directories (so folder contents can be checked individually)
+!*/
+
+# Exclude files with extensions (i.e., files that have at least one dot)
+!*.*
+
+# Result: all files without extensions are ignored, all files with extensions are tracked
