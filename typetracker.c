@@ -25,7 +25,6 @@ int load_file(const char *filename) {
     char buffer[MAX_LINE_LEN];
     while (fgets(buffer, sizeof(buffer), fp) && num_lines < MAX_LINES) {
         lines[num_lines] = strdup(buffer);
-        lines[num_lines][strcspn(lines[num_lines], "\n")] = '\0';
         num_lines++;
     }
 
@@ -69,9 +68,11 @@ void draw_screen(int top_line, int screen_rows, int screen_cols) {
 char current_char() {
     if (cursor.line >= num_lines) return '\0';
     int line_len = strlen(lines[cursor.line]);
-    if (cursor.col >= line_len) return '\0';
+    if (cursor.col >= line_len) return '\0';  // past end of line
+
     return lines[cursor.line][cursor.col];
 }
+
 
 void advance_cursor() {
     if (cursor.line >= num_lines) return;
