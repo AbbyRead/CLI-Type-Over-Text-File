@@ -33,6 +33,7 @@ int load_file(const char *filename) {
 }
 
 void draw_screen(int top_line, int screen_rows, int screen_cols) {
+    (void)screen_cols;  // silence unused parameter warning
     clear();
     for (int i = 0; i < screen_rows - 1 && (top_line + i) < num_lines; i++) {
         int lineno = top_line + i;

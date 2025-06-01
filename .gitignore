@@ -18,4 +18,7 @@
 # Exclude files with extensions (i.e., files that have at least one dot)
 !*.*
 
+!LICENSE
+!Makefile
+
 # Result: all files without extensions are ignored, all files with extensions are tracked
