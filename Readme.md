@@ -1,6 +1,6 @@
-# typetracker
+# TypeOver
 
-A terminal-based typing tracker implemented with ncurses.
+A command-line interface typing practice program.
 
 ## Features
 
